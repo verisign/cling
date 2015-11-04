@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Cling : cling: a Python module for automating network device command line interface interaction">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Cling</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/networkops/cling">View on GitHub</a>
+
+          <h1 id="project_title">Cling</h1>
+          <h2 id="project_tagline">cling: a Python module for automating network device command line interface interaction</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/networkops/cling/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/networkops/cling/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p align="center">
+  <img src="misc/logo.png">
+</p>
+
+<p align="center">Embrace Automation
+</p>
+
+<h2>
+<a id="cling" class="anchor" href="#cling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cling</h2>
+
+<p>In the world of APIs and emerging SDN... CLI screen-scrapping remains the primary method for interacting with heterogeneous network infrastructures. </p>
+
+<p>Cling(CLI next gen) is a Python module for automating network device command line interface interaction.</p>
+
+<h2>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<ul>
+<li>[optional] Net-SNMP (with Python bindings)  <a href="http://www.net-snmp.org/">http://www.net-snmp.org/</a>
+</li>
+</ul>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>git clone from github and:</p>
+
+<p><code>sudo python setup.py install</code></p>
+
+<p>or via PIP</p>
+
+<p><code>pip install cling</code></p>
+
+<h2>
+<a id="synopsis" class="anchor" href="#synopsis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Synopsis</h2>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">import</span> cling
+
+<span class="pl-k">try</span>:
+    ch <span class="pl-k">=</span> cling.Cling(<span class="pl-smi">hostname</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>router1.example.com<span class="pl-pds">'</span></span>,
+                     <span class="pl-smi">personality</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>ios<span class="pl-pds">'</span></span>,
+                     <span class="pl-smi">username</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>admin<span class="pl-pds">'</span></span>,
+                     <span class="pl-smi">password</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>secret<span class="pl-pds">'</span></span>)
+    ch.login()
+    <span class="pl-k">print</span> ch.run_command(<span class="pl-s"><span class="pl-pds">'</span>show version<span class="pl-pds">'</span></span>)
+    ch.logout()
+<span class="pl-k">except</span> cling.Error <span class="pl-k">as</span> e:
+    <span class="pl-k">print</span> e</pre></div>
+
+<ul>
+<li>This will:
+
+<ul>
+<li>spawn ssh command</li>
+<li>login to router1.example.com</li>
+<li>run a set of initialisation commands such as switch off paging(depending on the host's personality)</li>
+<li>run "show version" command and print it's output</li>
+<li>Logout from the device by running exit commands(personality dependent) and killing the spawned ssh process</li>
+<li>Error message is printed if an error occurs</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span class="octicon octicon-link"></span></a>API</h2>
+
+<div class="highlight highlight-source-python"><pre>Cling(<span class="pl-smi">hostname</span><span class="pl-k">=</span><span class="pl-c1">None</span>,
+      <span class="pl-smi">personality</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>generic<span class="pl-pds">'</span></span>,
+      <span class="pl-smi">username</span><span class="pl-k">=</span><span class="pl-c1">None</span>,
+      <span class="pl-smi">password</span><span class="pl-k">=</span><span class="pl-c1">None</span>,
+      <span class="pl-smi">pexpect_timeout</span><span class="pl-k">=</span><span class="pl-c1">10</span>,
+      <span class="pl-smi">pexpect_read_loop_timeout</span><span class="pl-k">=</span><span class="pl-c1">0.1</span>,
+      <span class="pl-smi">snmp_community</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>public<span class="pl-pds">'</span></span>,
+      <span class="pl-smi">snmp_version</span><span class="pl-k">=</span><span class="pl-c1">2</span>,
+      <span class="pl-smi">pexpect_maxread</span><span class="pl-k">=</span><span class="pl-c1">64000</span>,
+      <span class="pl-smi">pexpect_searchwindowsize</span><span class="pl-k">=</span><span class="pl-c1">5</span>,
+      <span class="pl-smi">error_lookup_buffer</span><span class="pl-k">=</span><span class="pl-c1">100</span>,
+      <span class="pl-smi">max_login_attempts</span><span class="pl-k">=</span><span class="pl-c1">2</span>,
+      <span class="pl-smi">failed_login_retry_pause</span><span class="pl-k">=</span><span class="pl-c1">3</span>,
+      <span class="pl-smi">pub_key_auth</span><span class="pl-k">=</span><span class="pl-c1">False</span>,
+      <span class="pl-smi">pub_key_path</span><span class="pl-k">=</span><span class="pl-c1">None</span>,
+      <span class="pl-smi">extra_ssh_params</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>,
+      <span class="pl-smi">ssh_path</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>/usr/bin/ssh<span class="pl-pds">'</span></span>,
+      <span class="pl-smi">simulation</span><span class="pl-k">=</span><span class="pl-c1">False</span>)</pre></div>
+
+<ul>
+<li>
+<code>hostname</code> hostname or IP address to connect to</li>
+<li>
+<p><code>personality</code> device's personality we're connecting to, this sets a prompt to expect, initialisation commands to run upon login, such as switching off screen paging and exit commands to run upon logout</p>
+
+<ul>
+<li>Personalities supported:
+
+<ul>
+<li>
+<code>generic</code>       Generic personality (does not run init or exit commands)</li>
+<li>
+<code>ios</code>           Cisco IOS</li>
+<li>
+<code>iosxr</code>         Cisco IOS XR</li>
+<li>
+<code>eos</code>           Arista switches</li>
+<li>
+<code>ironware</code>      Brocade routers and switches</li>
+<li>
+<code>junos</code>         Juniper routers</li>
+<li>
+<code>webos</code>         Radware Alteon ADX</li>
+<li>
+<code>acos</code>          A10 Networks ADX</li>
+<li>
+<code>netscaler</code>     Citrix NetScaler ADX</li>
+<li>
+<code>tmos</code>          F5 BIG-IP LTM/GTM</li>
+<li>
+<code>panos</code>         PaloAlto PAN-OS</li>
+<li>
+<code>snmp</code>          attempt to automatically discover personality using snmp sysDescr, requires Net-SNMP Python bindings to be installed. After a successful detection <code>Cling.persnonality</code> is set to the detected personality</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>username</code> user name to use for login</p></li>
+<li><p><code>password</code> password to use for login</p></li>
+<li><p><code>pexpect_timeout</code> initial value of timeout in seconds, used when waiting for a pattern to be matched, i.e. when waiting for a prompt when logging in or executing a command. Increase if working with a slow connection or if a command takes a long time to output. The behaviour can be changed after a succesful login() by setting child.timeout variable, it can be increased on the fly when executing long-running commands, e.g. traceroute, and set back to the original value as needed.</p></li>
+<li><p><code>pexpect_read_loop_timeout</code> when a command is issued (eg. ch.run_command('show running'), the response from the device (ie, the configuration) is read in chunks. The react_loop_timeout variable determines how often (in seconds) will the response buffer be polled for a new configuration chunk. Setting the value too low, eg. 0.0001 may result in configuration not being fetched - setting it to too high, eg. 5 may result in a pexpect_timeout reached. Default 0.1
+In slow connections and <strong>only</strong> if problems occur, try to set it to something higher than 0.1, eg. 0.5 or 0.7 or even 1 (worst case).</p></li>
+<li><p><code>snmp_community</code> community to use with <code>snmp</code> personality</p></li>
+<li><p><code>snmp_version</code> snmp version to use with <code>snmp</code> personality</p></li>
+<li><p><code>pexpect_maxread</code> readmax this much bytes at a time</p></li>
+<li><p><code>pexpect_searchwindowsize</code> search for prompt in this many last bytes of the output</p></li>
+<li><p><code>error_lookup_buffer</code> search for errors in this many last bytes of the output (default: 100)</p></li>
+<li><p><code>max_login_attempts</code> login attempts after which the device is considered unreachable (default: 3)</p></li>
+<li><p><code>pub_key_auth</code> set True to use public key authentication for ssh (default: False)</p></li>
+<li><p><code>pub_key_path</code> path to public key, added as <code>-i &lt;pub_key_path&gt;</code> to the ssh command</p></li>
+<li><p><code>extra_ssh_params</code> str added after username@hostname in the ssh command line</p></li>
+<li><p><code>ssh_path</code> path to ssh binary</p></li>
+<li><p><code>simulation</code> if set to True, commands are not applied to the device. An info-level logger eases logging (default: False)</p></li>
+</ul>
+
+<h3>
+<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h3>
+
+<ul>
+<li><code>login()</code></li>
+</ul>
+
+<p>Spawns ssh or telnet, logins to the host and runs the intialisation commands</p>
+
+<ul>
+<li><code>run_command(command, force_execute=False)</code></li>
+</ul>
+
+<p>Sends a command + "line separator" to the child process, waits for cli prompt to be matched and returns output buffer minus the echoed command and the cli prompt
+Error detection is carried on output buffer over the last <code>error_lookup_buffer</code> bytes (characters).</p>
+
+<p><code>force_execute</code> bypasses the simulation mode if set to true and is a shortcut for:</p>
+
+<div class="highlight highlight-source-python"><pre>ch.simulation <span class="pl-k">=</span> <span class="pl-c1">False</span>
+ch.run_command(<span class="pl-s"><span class="pl-pds">'</span>I command you<span class="pl-pds">'</span></span>)
+ch.simulation <span class="pl-k">=</span> <span class="pl-c1">True</span></pre></div>
+
+<ul>
+<li>Magic command tags</li>
+</ul>
+
+<p>The following "magic" command tags are supported:</p>
+
+<ul>
+<li>
+<code>&lt;sleep X&gt;</code>: Sleep for X seconds</li>
+<li>
+<code>&lt;send&gt;command</code>: will send command without line separator (eg. without \n)</li>
+<li>
+<code>&lt;force_exec&gt;command</code>: will execute the command regardless of the simulation state</li>
+<li>
+<code>&lt;send_line&gt;command</code>: will send command with line separator</li>
+<li>
+<code>&lt;ignore_err&gt;command</code>: bypasses error checking on command output</li>
+</ul>
+
+<p>Example:</p>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-c"># JunOS-based device</span>
+ch <span class="pl-k">=</span> cling.Cling(...,
+                 <span class="pl-smi">simulation</span><span class="pl-k">=</span><span class="pl-c1">True</span>)
+ch.login()
+<span class="pl-c"># Will not run the command</span>
+ch.run_command(<span class="pl-s"><span class="pl-pds">'</span>edit private<span class="pl-pds">'</span></span>)
+<span class="pl-c"># Will run the command</span>
+ch.run_command(<span class="pl-s"><span class="pl-pds">'</span>&lt;force_exec&gt;edit private<span class="pl-pds">'</span></span>)
+ch.run_command(<span class="pl-s"><span class="pl-pds">'</span>set hostname test.example.test<span class="pl-pds">'</span></span>)
+ch.run_command(<span class="pl-s"><span class="pl-pds">'</span>exit<span class="pl-pds">'</span></span>, <span class="pl-smi">force_exec</span><span class="pl-k">=</span><span class="pl-c1">True</span>)
+ch.logout()</pre></div>
+
+<ul>
+<li><code>send(string)</code></li>
+</ul>
+
+<p>Sends string to the host, does not wait for the cli prompt to be matched</p>
+
+<ul>
+<li><code>send_line(string)</code></li>
+</ul>
+
+<p>Sends string  + "line separator" to the host, does not wait for the cli prompt to be matched</p>
+
+<ul>
+<li><code>logout()</code></li>
+</ul>
+
+<p>Runs exit commands (depending on personality selected) and kills the spawned process</p>
+
+<h3>
+<a id="reactor---running-commands-on-multiple-hosts" class="anchor" href="#reactor---running-commands-on-multiple-hosts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reactor - running commands on multiple hosts</h3>
+
+<p>The reactor allows for execution of commands/configuration files on multiple hosts in parallel using the python multiprocessing module under the hood. The reactor is invoked in this way:</p>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">import</span> cling
+reactor <span class="pl-k">=</span> cling.reactor.Reactor(<span class="pl-smi">tasks</span><span class="pl-k">=</span>hosts,
+                                <span class="pl-smi">func</span><span class="pl-k">=</span><span class="pl-k">&lt;</span>applier_function<span class="pl-k">&gt;</span>,
+                                <span class="pl-smi">num_workers</span><span class="pl-k">=</span><span class="pl-c1">2</span>)</pre></div>
+
+<p>"hosts" is a list of hostnames, eg.
+<code>hosts = ['test1.example.com', 'test2.example.com']</code></p>
+
+<p>Applier function should apply configuration via cling. It should have a single param that indicates the device <em>hostname</em>. An example use case for the applier function is for parsing config files and apply the configuration to a device. So, in this example the applier should take care of log-in to a device, reading the config from file(s) applying it and exit. The reactor takes care of the rest, ie engaging the applier to multiple devices in a case where one would like to roll a new feature to many network devices.</p>
+
+<p><code>num_workers</code> is obvious, 1 means process the list of hosts in a serial manner. 2 or more implies parallel.</p>
+
+<h3>
+<a id="error-handling" class="anchor" href="#error-handling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Error handling</h3>
+
+<p><code>cling.Error</code> is raised if an error has occurred, e.g connection has been closed by the remote host or timeout occurred waiting for a pattern to be matched. Under the error_handler directory there are device specific error detectors. Detectors act upon each command response and once certain patterns are matched (eg. "syntax error") the cling.Error exception is raised.</p>
+
+<h2>
+<a id="pexpect_ng" class="anchor" href="#pexpect_ng" aria-hidden="true"><span class="octicon octicon-link"></span></a>pexpect_ng</h2>
+
+<p><em>cling uses a modified version of pexpect 2.4, which is distributed under terms (looks like an MIT license), located in pexpect_ng.py</em></p>
+
+<p>pyexpect_ng is a modified version of pexpect 2.4. The main difference is in the way the response for the device is searched against matching prompt. 
+Pexpect parses the device response and tries to match the prompt in expect() in every chunk of received data over the last <em>pexpect_searchwindowsize</em> characters. Pexpect_ng parses the whole response and then looks for a prompt over the last <em>pexpect_searchwindowsize</em> characters.
+This saves the day in case prompt special chars (eg. #, &gt;) are used in the output.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Cling maintained by <a href="https://github.com/networkops">networkops</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
