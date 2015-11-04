@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="57.039883mm"
+   height="54.695267mm"
+   viewBox="0 0 202.10982 193.80213"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="cling.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="-13.780943"
+     inkscape:cy="63.191885"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1440"
+     inkscape:window-height="788"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4372"
+       originx="-213.82085"
+       originy="-696.22101" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-213.82085,-162.3391)">
+    <path
+       style="opacity:1;fill:none;fill-rule:evenodd;stroke:#880000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 241.35692,244.89136 0,-77.55226 148.25153,0 0,77.27229"
+       id="path4260"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/lpoulopoulos/rect4419.png"
+       inkscape:export-xdpi="133.59"
+       inkscape:export-ydpi="133.59" />
+    <path
+       style="opacity:1;fill:none;fill-rule:evenodd;stroke:#880000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 218.82135,202.7112 0,78.64315 181.54383,0"
+       id="path4346"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/lpoulopoulos/rect4419.png"
+       inkscape:export-xdpi="133.59"
+       inkscape:export-ydpi="133.59" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4368"
+       d="m 410.93017,202.67358 0,60.3217 -175.36527,0"
+       style="opacity:1;fill:none;fill-rule:evenodd;stroke:#880000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="/Users/lpoulopoulos/rect4419.png"
+       inkscape:export-xdpi="133.59"
+       inkscape:export-ydpi="133.59" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4394"
+       d="m 390.43552,297.63858 0,53.50264 -149.90568,0 0,-53.3095"
+       style="opacity:1;fill:none;fill-rule:evenodd;stroke:#880000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="/Users/lpoulopoulos/rect4419.png"
+       inkscape:export-xdpi="133.59"
+       inkscape:export-ydpi="133.59" />
+    <rect
+       style="opacity:1;fill:#666666;fill-opacity:1;stroke:#880000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4415"
+       width="20"
+       height="10"
+       x="272.14282"
+       y="187.36218"
+       inkscape:export-filename="/Users/lpoulopoulos/rect4419.png"
+       inkscape:export-xdpi="133.59"
+       inkscape:export-ydpi="133.59" />
+    <rect
+       style="opacity:1;fill:#666666;fill-opacity:1;stroke:#880000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4419"
+       width="20"
+       height="10"
+       x="337.85712"
+       y="187.3622"
+       inkscape:export-filename="/Users/lpoulopoulos/rect4419.png"
+       inkscape:export-xdpi="133.59"
+       inkscape:export-ydpi="133.59" />
+  </g>
+</svg>
