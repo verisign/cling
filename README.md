@@ -6,7 +6,7 @@
 
 ## Cling
 
-In the world of APIs and emerging SDN... CLI screen-scrapping remains the primary method for interacting with heterogeneous network infrastructures. 
+In the age of APIs and emerging SDN... CLI screen-scrapping remains the primary method for interacting with heterogeneous network infrastructures. 
 
 Cling(CLI next gen) is a Python module for automating network device command line interface interaction.
 
