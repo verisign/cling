@@ -194,7 +194,7 @@ Applier function should apply configuration via cling. It should have a single p
 `cling.Error` is raised if an error has occurred, e.g connection has been closed by the remote host or timeout occurred waiting for a pattern to be matched. Under the error_handler directory there are device specific error detectors. Detectors act upon each command response and once certain patterns are matched (eg. "syntax error") the cling.Error exception is raised.
 
 ## pexpect_ng
-*cling uses a modified version of pexpect 2.4, which is distributed under terms(looks like an MIT license), located in pexpect_ng.py*
+*cling uses a modified version of pexpect 2.4, which is distributed under terms (looks like an MIT license), located in pexpect_ng.py*
 
 pyexpect_ng is a modified version of pexpect 2.4. The main difference is in the way the response for the device is searched against matching prompt. 
 Pexpect parses the device response and tries to match the prompt in expect() in every chunk of received data over the last *pexpect_searchwindowsize* characters. Pexpect_ng parses the whole response and then looks for a prompt over the last *pexpect_searchwindowsize* characters.
