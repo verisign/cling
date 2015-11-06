@@ -78,7 +78,7 @@ Cling(hostname=None,
         - `eos`           Arista switches
         - `ironware`      Brocade routers, switches and load balancers
         - `junos`         Juniper routers
-        - `webos`         Radware Alteon ADX
+        - `webos`         Radware Alteon
         - `acos`          A10 Networks ADX
         - `netscaler`     Citrix NetScaler ADX
         - `tmos`          F5 BIG-IP LTM/GTM
