@@ -109,7 +109,7 @@ class Cling(object):
                  max_login_attempts=2,
                  failed_login_retry_pause=3,
                  pub_key_auth=False,
-                 pub_key_path=None,
+                 identity_path=None,
                  extra_ssh_params='',
                  ssh_path='/usr/bin/ssh',
                  simulation=False):
@@ -128,7 +128,7 @@ class Cling(object):
         self.max_login_attempts = max_login_attempts
         self.failed_login_retry_pause = failed_login_retry_pause
         self.pub_key_auth = pub_key_auth
-        self.pub_key_path = pub_key_path
+        self.identity_path = identity_path
         self.extra_ssh_params = extra_ssh_params
         self.ssh_path = ssh_path
         self.simulation = simulation
@@ -363,8 +363,8 @@ class Cling(object):
             pref_auth_str += ',publickey'
         ssh_command.append(pref_auth_str)
 
-        if self.pub_key_auth and self.pub_key_path:
-            ssh_command.append('-i %s' % self.pub_key_path)
+        if self.pub_key_auth and self.identity_path:
+            ssh_command.append('-i %s' % self.identity_path)
 
         ssh_command.append('%s@%s' % (self.username, self.hostname))
 
