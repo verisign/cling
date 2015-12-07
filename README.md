@@ -63,7 +63,7 @@ Cling(hostname=None,
       max_login_attempts=2,
       failed_login_retry_pause=3,
       pub_key_auth=False,
-      pub_key_path=None,
+      identity_path=None,
       extra_ssh_params='',
       ssh_path='/usr/bin/ssh',
       simulation=False)
@@ -107,7 +107,7 @@ In slow connections and **only** if problems occur, try to set it to something h
 
 - `pub_key_auth` set True to use public key authentication for ssh (default: False)
 
-- `pub_key_path` path to public key, added as `-i <pub_key_path>` to the ssh command
+- `identity_path` path to private key to use with `pub_key_auth=True`, added as `-i <identity_path>` to the ssh command
 
 - `extra_ssh_params` str added after username@hostname in the ssh command line
 
