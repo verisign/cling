@@ -1366,7 +1366,9 @@ class spawn(object):
         See expect() for other arguments, return value and exceptions. """
 
         self.searcher = searcher
-
+        self.buffer = ''
+        self.before = ''
+        self.after = ''
         if timeout == -1:
             timeout = self.timeout
         if timeout is not None:
