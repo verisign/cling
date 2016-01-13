@@ -200,3 +200,7 @@ pyexpect_ng is a modified version of pexpect 2.4. The main difference is in the 
 Pexpect parses the device response and tries to match the prompt in expect() in every chunk of received data over the last *pexpect_searchwindowsize* characters. Pexpect_ng parses the whole response and then looks for a prompt over the last *pexpect_searchwindowsize* characters.
 This saves the day in case prompt special chars (eg. #, >) are used in the output.
 
+[13 Jan 2016]
+
+- Another difference is the fact that the expect_loop is initialized with an empty buffer (https://github.com/networkops/cling/blob/master/cling/pexpect_ng.py#L1369).
+
