@@ -1367,8 +1367,7 @@ class spawn(object):
 
         self.searcher = searcher
         self.buffer = ''
-        self.before = ''
-        self.after = ''
+        
         if timeout == -1:
             timeout = self.timeout
         if timeout is not None:
