@@ -105,7 +105,7 @@ class Cling(object):
                  snmp_version=2,
                  pexpect_maxread=64000,
                  pexpect_searchwindowsize=5,
-                 error_lookup_buffer=100,
+                 error_lookup_buffer=256,
                  max_login_attempts=2,
                  failed_login_retry_pause=3,
                  pub_key_auth=False,

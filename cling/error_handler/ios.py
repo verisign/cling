@@ -8,11 +8,11 @@ import re
 class IosErrorHandler(DefaultErrorHandler):
 
     _ERROR_MATCHES = [
-                   re.compile(r'%\s+invalid', flags=re.I),
-                   re.compile(r'%\s+unknown', flags=re.I),
-                   re.compile(r'%\s+ambiguous', flags=re.I),
-                   re.compile(r'%\s+incomplete', flags=re.I),
-                   re.compile(r'authorization failed', flags=re.I),
+                   re.compile(r'^%.+invalid', flags=re.I|re.M),
+                   re.compile(r'^%.+unknown', flags=re.I|re.M),
+                   re.compile(r'^%.+ambiguous', flags=re.I|re.M),
+                   re.compile(r'^%.+incomplete', flags=re.I|re.M),
+                   re.compile(r'^%.+failed', flags=re.I|re.M),
                    ]
 
     def __init__(self, personality):
