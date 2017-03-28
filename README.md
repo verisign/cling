@@ -83,6 +83,7 @@ Cling(hostname=None,
         - `netscaler`     Citrix NetScaler ADX
         - `tmos`          F5 BIG-IP LTM/GTM
         - `panos`         PaloAlto PAN-OS
+        - `cumulus`       Cumulus gear
         - `snmp`          attempt to automatically discover personality using snmp sysDescr, requires Net-SNMP Python bindings to be installed. After a successful detection `Cling.persnonality` is set to the detected personality
 
 - `username` user name to use for login
