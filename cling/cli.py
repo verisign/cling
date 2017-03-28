@@ -90,6 +90,12 @@ PERSONALITIES = {
         'exit': ['exit'],
         'sys_descr': 'palo alto'
     },
+
+    'cumulus': {
+        'init': [''],
+        'exit': ['exit'],
+        'sys_descr': 'cumulus'
+    }
 }
 
 
