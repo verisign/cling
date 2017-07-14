@@ -8,10 +8,17 @@ from . import pexpect_ng as pexpect
 
 from . import Error
 
+try:  # Python 2.7+
+    from logging import NullHandler
+except ImportError:
+    class NullHandler(logging.Handler):
+        def emit(self, record):
+            pass
+
 __all__ = ['Cling']
 
 LOG = logging.getLogger(__name__)
-LOG.addHandler(logging.NullHandler())
+LOG.addHandler(NullHandler())
 
 # attempt to load netsnmp Python bindings,
 # this enables usage of personality auto discovery

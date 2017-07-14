@@ -120,7 +120,7 @@ In slow connections and **only** if problems occur, try to set it to something h
 
 - `login()`
 
-Spawns ssh or telnet, logins to the host and runs the intialisation commands
+Spawns ssh logins to the host and runs the intialisation commands
 
 - `run_command(command, force_execute=False)`
 
