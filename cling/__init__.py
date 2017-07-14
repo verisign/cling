@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*- vim:fileencoding=utf-8:
 
-__version__ = '2.3.2'
+__version__ = '2.3.3'
 
 __all__ = ['Cling', 'Error', 'Reactor']
 
