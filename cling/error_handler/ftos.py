@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Error handler tailored for Cisco IOS devices.
+Error handler tailored for Force 10 devices.
 """
 
 import re
