@@ -9,7 +9,7 @@ setup (
     packages=find_packages('.'),
     description=('Cling(CLI next gen) is a Python module for automating '
                  'network device command line interface interaction'),
-    author='Anton Gavrik, Leonidas Poulopoulos, Michael Lim',
-    license='BSD 3-Clause',                 
+    author='Anton Gavrik, Leonidas Poulopoulos, Michael Lim, Kinnar Dattani',
+    license='BSD 3-Clause'
 )
 
