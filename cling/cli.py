@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
+import logging
 import re
 import sys
 import time
-import logging
-from . import pexpect_ng as pexpect
 
 from . import Error
+from . import pexpect_ng as pexpect
 
 try:  # Python 2.7+
     from logging import NullHandler
@@ -102,6 +102,12 @@ PERSONALITIES = {
         'init': [''],
         'exit': ['exit'],
         'sys_descr': 'cumulus'
+    },
+
+    'ftos': {
+        'init': [''],
+        'exit': ['exit'],
+        'sys_descr': 'Dell Networking OS'
     }
 }
 
