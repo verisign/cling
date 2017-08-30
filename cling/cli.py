@@ -108,6 +108,12 @@ PERSONALITIES = {
         'init': [''],
         'exit': ['exit'],
         'sys_descr': 'Dell Networking OS'
+    },
+
+    'checkpoint': {
+        'init': [''],
+        'exit': ['exit'],
+        'sys_descr': 'Linux.*cpx86_64'
     }
 }
 

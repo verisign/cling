@@ -85,6 +85,7 @@ Cling(hostname=None,
         - `panos`         PaloAlto PAN-OS
         - `cumulus`       Cumulus gear
         - `ftos`          Force 10
+        - `checkpoint`    Checkpoint firewalls
         - `snmp`          attempt to automatically discover personality using snmp sysDescr, requires Net-SNMP Python bindings to be installed. After a successful detection `Cling.persnonality` is set to the detected personality
 
 - `username` user name to use for login
