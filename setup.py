@@ -1,9 +1,13 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+"""
+setuptools installer
+"""
 
 from setuptools import setup, find_packages
+
 import cling
 
-setup (
+setup(
     name='cling',
     version=cling.__version__,
     packages=find_packages('.'),
@@ -12,4 +16,3 @@ setup (
     author='Anton Gavrik, Leonidas Poulopoulos, Michael Lim, Kinnar Dattani',
     license='BSD 3-Clause'
 )
-
