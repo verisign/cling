@@ -38,7 +38,13 @@ PERSONALITIES = {
     'ios': {
         'init': ['terminal length 0'],
         'exit': ['exit'],
-        'sys_descr': r'cisco ios (?! xr )'
+        'sys_descr': r'cisco ios (?! xr |.*iosxe)'
+    },
+
+    'iosxe': {
+        'init': ['terminal length 0'],
+        'exit': ['exit'],
+        'sys_descr': r'iosxe'
     },
 
     'iosxr': {

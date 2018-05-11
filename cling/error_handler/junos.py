@@ -6,13 +6,12 @@ from .default import DefaultErrorHandler
 import re
 
 class JunosErrorHandler(DefaultErrorHandler):
-
     # These are the most common error messages that a Cisco can return
     _ERROR_MATCHES = [
-                   re.compile(r'\s+syntax error', re.I),
-                   re.compile(r'^missing argument', re.I),
-                   re.compile('^(unknown|invalid|error)', re.I)
-                   ]
+        re.compile(r'\s+syntax error', re.I),
+        re.compile(r'^missing argument', re.I),
+        re.compile('^(unknown|invalid|error)', re.I)
+    ]
 
     def __init__(self, personality):
         super(JunosErrorHandler, self).__init__(personality)
@@ -22,4 +21,3 @@ class JunosErrorHandler(DefaultErrorHandler):
         if any(m.search(output) for m in self._ERROR_MATCHES):
             return True
         return False
-
