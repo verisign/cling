@@ -75,6 +75,7 @@ Cling(hostname=None,
         - `generic`       Generic personality (does not run init or exit commands)
         - `ios`           Cisco IOS
         - `iosxr`         Cisco IOS XR
+        - `iosxe`         Cisco IOS XE
         - `eos`           Arista switches
         - `ironware`      Brocade routers, switches and load balancers
         - `junos`         Juniper routers
