@@ -1,6 +1,6 @@
-# -*- coding: utf-8 -*- vim:fileencoding=utf-8:
+# -*- coding: utf-8 -*-
 
-"Error handler tailored for Cisco IOS devices."
+"""Error handler tailored for tripplite devices."""
 
 from .default import DefaultErrorHandler
 import re
