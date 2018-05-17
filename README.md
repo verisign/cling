@@ -74,6 +74,7 @@ Cling(hostname=None,
     - Personalities supported:
         - `generic`       Generic personality (does not run init or exit commands)
         - `ios`           Cisco IOS
+        - `iosxe`         Cisco IOS XE
         - `iosxr`         Cisco IOS XR
         - `eos`           Arista switches
         - `ironware`      Brocade routers, switches and load balancers
@@ -86,6 +87,7 @@ Cling(hostname=None,
         - `cumulus`       Cumulus gear
         - `ftos`          Force 10
         - `checkpoint`    Checkpoint firewalls
+        - `tripplite`     Tripplite terminal servers
         - `snmp`          attempt to automatically discover personality using snmp sysDescr, requires Net-SNMP Python bindings to be installed. After a successful detection `Cling.persnonality` is set to the detected personality
 
 - `username` user name to use for login
