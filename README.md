@@ -76,6 +76,7 @@ Cling(hostname=None,
         - `ios`           Cisco IOS
         - `iosxe`         Cisco IOS XE
         - `iosxr`         Cisco IOS XR
+        - `iosxe`         Cisco IOS XE
         - `eos`           Arista switches
         - `ironware`      Brocade routers, switches and load balancers
         - `junos`         Juniper routers
