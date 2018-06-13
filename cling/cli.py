@@ -120,6 +120,12 @@ PERSONALITIES = {
         'init': [''],
         'exit': ['exit'],
         'sys_descr': 'Linux.*cpx86_64'
+    },
+
+    'tripplite': {
+        'init': [''],
+        'exit': ['exit'],
+        'sys_descr': 'Linux.*armv4tl'
     }
 }
 
